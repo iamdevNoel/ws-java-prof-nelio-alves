@@ -1,0 +1,44 @@
+package trabalhando_arquivos.application.application;
+
+import java.util.InputMismatchException;
+import java.util.Locale;
+import java.util.Scanner;
+
+import model.entities.Account;
+import model.exceptions.WithdrawException;
+
+public class Program {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		Locale.setDefault(Locale.US);
+		Account account = null;
+		
+		try {
+			System.out.println("Enter account data");
+			System.out.print("Account number: ");
+			int accountNumber = input.nextInt();
+			input.nextLine(); // Consumindo quebra de linha pendente
+			System.out.print("Account holder: ");
+			String accountHolder = input.nextLine();
+			System.out.print("Initial balance: R$");
+			double balance = input.nextDouble();
+			System.out.print("Withdraw limit: R$");
+			double withdrawLimit = input.nextDouble();
+			account = new Account(accountNumber, accountHolder, balance, withdrawLimit);
+
+			System.out.print("Enter the amount for a withdraw: ");
+			double amount = input.nextDouble();
+			account.withdraw(amount);
+		} catch (InputMismatchException exception) {
+			System.out.println("Invalid data type inserted.");
+		} catch (WithdrawException exception) {
+			exception.getMessage();
+		} finally {
+			System.out.printf("Updated balance: R$ %.2f", account.getBalance());
+		}
+
+		input.close();
+	}
+
+}

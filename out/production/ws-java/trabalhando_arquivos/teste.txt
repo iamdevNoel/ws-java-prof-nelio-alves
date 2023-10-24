@@ -1,0 +1,4 @@
+Texto original: Primeira Linha
+Texto original: Segunda Linha
+Texto original: Terceira Linha
+Texto modificado: este texto foi inserido DEPOIS que o arquivo foi criado.
