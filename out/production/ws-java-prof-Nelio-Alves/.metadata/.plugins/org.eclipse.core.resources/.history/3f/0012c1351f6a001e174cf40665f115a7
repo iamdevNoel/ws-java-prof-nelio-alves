@@ -1,0 +1,45 @@
+package boardgame;
+
+public class Board {
+
+	private Integer rows = 8;
+	private Integer columns = 8;
+	private Piece[][] pieces = new Piece[8][8];
+	
+	public Board() {
+	}
+
+	public Integer getRows() {
+		return rows;
+	}
+
+	public Integer getColumns() {
+		return columns;
+	}
+
+	public Piece getPiece(Integer row, Integer column) {
+		return pieces[row][column];
+	}
+	
+	//Checks a position at board, returns a piece if it's there or null if it's empty
+	public Piece getPiece(Position position) {
+		return pieces[position.getRow()][position.getColumn()];
+	}
+	
+	public void placePiece(Piece piece, Position position) {
+		pieces[position.getRow()][position.getColumn()] = piece;
+		piece.position = position;
+	}
+	
+	public boolean positionExists(Position position) {
+		//True if position [row][column] is greater than 0 and smaller than board length
+		return 	position.getRow() >= 0 && position.getRow() < rows
+				&& position.getColumn() >= 0 && position.getColumn() < columns;
+	}
+	
+	public boolean isThereAPiece(Position position) {
+		//True if position at board is different than null
+		return getPiece(position) != null;
+	}
+	
+}
