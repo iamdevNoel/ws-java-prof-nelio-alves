@@ -1,13 +1,13 @@
-package jdbc2.src.application;
+package jdbc.src.application;
 
-import jdbc2.src.db.DB;
+import jdbc.src.db.DB;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Program {
+public class Program1 {
 
     public static void main(String[] args) {
         // variável para o Java se conectar com o banco de dados, conforme login no arquivo db.properties

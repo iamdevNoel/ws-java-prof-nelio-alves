@@ -1,6 +1,6 @@
-package application;
+package jdbc.src.application;
 
-import db.DB;
+import jdbc.src.db.DB;
 
 public class Program {
 

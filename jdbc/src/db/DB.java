@@ -1,4 +1,4 @@
-package jdbc2.src.db;
+package jdbc.src.db;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -34,7 +34,7 @@ public class DB {
     }
 
     private static Properties loadProperties() {
-        try (FileInputStream fileSource = new FileInputStream("jdbc2/db.properties")) {
+        try (FileInputStream fileSource = new FileInputStream("jdbc/db.properties")) {
             Properties properties = new Properties();
             properties.load(fileSource);
             return properties;
